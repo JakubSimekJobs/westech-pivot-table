@@ -1,6 +1,7 @@
 .btn {
     display: inline-flex;
     align-items: center;
+    gap: var(--spacing-1);
 
     width: 100%;
     padding: var(--spacing-0);
@@ -14,5 +15,15 @@
 
     &:focus-visible {
         outline: var(--border-width) solid var(--color-active);
+    }
+}
+
+.btn--icon-absolute {
+    position: relative;
+    padding-right: var(--spacing-2);
+
+    .btn__icon {
+        position: absolute;
+        right: 0;
     }
 }

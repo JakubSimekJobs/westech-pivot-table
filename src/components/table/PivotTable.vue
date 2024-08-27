@@ -9,15 +9,23 @@
         class="table__col"
       >
         <div
-          class="table__cell"
+          class="table__cell justify-center"
         >
           <button
-            class="btn"
+            class="btn btn--icon-absolute"
             role="button"
             :title="sortBy.order"
             @click="sortData(colName)"
           >
             {{ colName }}
+            <i
+              v-if="colName === sortBy.colName"
+              class="btn__icon"
+              :class="{
+                  'icon-caret-up': sortBy.order == sortOrder.asc,
+                  'icon-caret-down': sortBy.order == sortOrder.desc,
+                }"
+            ></i>
           </button>
         </div>
       </th>
@@ -37,6 +45,7 @@
               :title="row.open ? 'Hide detail' : 'Show detail'"
               @click="toggleRowDetail(row)"
             >
+              <i :class="row.open ? 'icon-plus-square' : 'icon-minus-square'"></i>
               {{ row.name }}
             </button>
           </div>
