@@ -27,12 +27,19 @@
   --vt-c-text-dark-2: rgba(235, 235, 235, 0.64);
 
   --border-width: 2px;
+  --border-radius: 0.5rem;
 
   --spacing-0: 0;
+  --spacing-1: 0.5rem;
   --spacing-2: 1rem;
   --spacing-4: 2rem;
+  --spacing-5: 2.5rem;
 
   --width-container: 1280px;
+  --width-mobile: 768px;
+
+  --z-index-base: 0;
+  --z-index-top: 1;
 }
 
 /* semantic color variables for this project */

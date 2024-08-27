@@ -1,0 +1,77 @@
+@import '../variables';
+
+.table {
+    --table-leading-col-width: 310px;
+
+    table-layout: fixed;
+    width: calc(var(--width-container) - 2 * var(--spacing-4));
+    border-spacing: var(--spacing-0);
+
+    @media only screen and (max-width: $breakpoint-desktop) {
+        --table-leading-col-width: 260px;
+    }
+
+    @media only screen and (max-width: $breakpoint-mobile) {
+        --table-leading-col-width: 180px;
+    }
+}
+
+.table__cell {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-1);
+    padding: var(--spacing-1) var(--spacing-2);
+}
+
+.table__col {
+    border: var(--border-width) solid var(--color-border);
+}
+
+.table__leading-col {
+    width: var(--table-leading-col-width);
+    position: sticky;
+    left: 0;
+    z-index: var(--z-index-top);
+    background: var(--color-background);
+}
+
+.table__sort-button {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-1);
+}
+
+.table__sort-icon {
+    position: absolute;
+    right: 0;
+    transform: translateX(100%);
+}
+
+.table__col + .table__col {
+    border-left: none;
+}
+
+.table__row + .table__row .table__col {
+    border-top: none;
+}
+
+.table__head + .table__body .table__row:first-child .table__col {
+    border-top: none;
+}
+
+.table__head .table__row:first-child .table__col:first-child {
+    border-top-left-radius: var(--border-radius);
+}
+
+.table__head .table__row:first-child .table__col:last-child {
+    border-top-right-radius: var(--border-radius);
+}
+
+.table__body .table__row:last-child .table__col:first-child {
+    border-bottom-left-radius: var(--border-radius);
+}
+
+.table__body .table__row:last-child .table__col:last-child {
+    border-bottom-right-radius: var(--border-radius);
+}
